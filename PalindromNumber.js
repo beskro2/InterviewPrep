@@ -58,40 +58,30 @@ return isPalindrom;
 //secound string method alot simpler O(n)
 var isPalindrome = function(number){
 let sentance = number.toString();
-let reverse = number.split("").reverse().join("");
+let reverse = sentance.split("").reverse().join("");
 return sentance ===reverse;
 }
 
 //now for the solution where the number is not converted to a string
 
-/* work through of how to get one char of a number
+var isPalindrome = function(y){
 
-
-let t = y/100
-console.log("divid by 10: "+t)
-let b = t%10
-console.log("remander if divided by 10: " +b)
-let s = Math.floor(b);
-console.log("floor :" +s)
-let singlechar = Math.floor((y/position)%10);
-*/
-let y =1234321;
-
-
+let t =y;
 let temp =0;
-while (y > temp)
-{
-    temp = Math.floor(y%10)
-    temp = temp*10;
-    y= Math.floor(y/10)
+let a = 0
+ while(t>0)
+ {
+    temp = Math.floor(t%10)
+    t = (t-temp)/10 
+    a = (a*10)+temp
+    console.log('a is '+ a)
+ }
+
+return y === a
 }
 
-
-
-
-
 /*
-endcases/things to consider
+endcases things to consider
 what if the palindrom has a simbol that is not a number ex -, +
 if the palindrom has an odd number of charicters does that affect your function
 if the number has a decimal point
