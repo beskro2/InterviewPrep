@@ -81,9 +81,9 @@ return y === a
 }
 
 /*
-endcases things to consider
-what if the palindrom has a simbol that is not a number ex -, +
-if the palindrom has an odd number of charicters does that affect your function
+end Cases things to consider
+what if the palindrome has a symbol that is not a number ex -, +
+if the palindrome has an odd number of characters does that affect your function
 if the number has a decimal point
 for string version ensure all letters are the same lower case
 */
