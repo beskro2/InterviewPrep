@@ -15,12 +15,12 @@ Explanation: There is no common prefix among the input strings.
 var strs = ["flower", "flow", "flight"]
 
 var longestCommonPrefix = function(str){
-    
+    //returns an emply string if the array has no entrys
     if(str.length ===0)
     {
         return ""
     }
-
+    //set prefix to the first string in the array
     let prefix = str[0]
 
     for (let word of strs)
@@ -35,3 +35,6 @@ var longestCommonPrefix = function(str){
  return prefix
 }
 longestCommonPrefix(strs)
+
+
+
