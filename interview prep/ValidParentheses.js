@@ -20,76 +20,77 @@ Example 3:
 Input: s = "(]"
 Output: false*/
 
-let right="[{}]()"
-let wrong='{]()'
-let wrong2="{{}"
-let test = wrong2
+let right = "[{}]()";
+let wrong = "{]()";
+let wrong2 = "{{}";
+let test = wrong2;
 
 var validParentheses = true;
 
-let store =[];
+let store = [];
 
-while(test.length != 0)
-{
-    //if the first character is a open ({[ this will place in the array - im using as a stack
-if(test.charAt(0) === '(' || test.charAt(0)=== '{' || test.charAt(0) === '[')
-{
+while (test.length != 0) {
+  //if the first character is a open ({[ this will place in the array - im using as a stack
+  if (
+    test.charAt(0) === "(" ||
+    test.charAt(0) === "{" ||
+    test.charAt(0) === "["
+  ) {
     console.log(test.charAt(0));
     store.push(test.charAt(0));
-    test = test.slice(1,test.length);
+    test = test.slice(1, test.length);
     console.log(test);
+  }
+
+  //check for matches for ")"
+  if (test.charAt(0) === ")") {
+    if (store.pop() === "(") {
+      test = test.slice(1, test.length);
+    } else {
+      validParentheses = false;
+
+      break;
+    }
+  }
+  //check for matches for ']'
+  if (test.charAt(0) === "]") {
+    if (store.pop() === "[") {
+      test = test.slice(1, test.length);
+    } else {
+      validParentheses = false;
+
+      break;
+    }
+  }
+  //check for matches for '}'
+  if (test.charAt(0) === "}") {
+    if (store.pop() === "{") {
+      test = test.slice(1, test.length);
+    } else {
+      validParentheses = false;
+
+      break;
+    }
+  }
 }
 
-//check for matches for ")"
-if(test.charAt(0) === ')' )
-{
-  if(store.pop() ==='(')
-  {
-    test = test.slice(1,test.length);
-  }
-  else{
-    validParentheses=false;
-   
-    break;
-  }
-}
-//check for matches for ']'
-if(test.charAt(0) === ']' )
-{
-  if(store.pop() ==='[')
-  {
-    test = test.slice(1,test.length);
-  }
-  else{
-    validParentheses=false;
-  
-    break;
-  }
-}
-//check for matches for '}'
-if(test.charAt(0) === '}' )
-{
-  if(store.pop() ==='{')
-  {
-    test = test.slice(1,test.length);
-  }
-  else{
-    validParentheses=false;
-    
-    break;
-  }
-}
-}
-
-if(store.length>0)
-{
-    validParentheses=false;
+if (store.length > 0) {
+  validParentheses = false;
 }
 
 console.log(validParentheses);
+
+let t = 1;
+while (t < 3);
+{
+  let taco = 2;
+  console.log(taco.toString());
+  taco++;
+  t++;
+}
 
 /* the ideal data structure for this is a stack. an array in javascript as the push pop functions that we need for this project.
 somethings to consider: 
 make sure that both the stack and string are empty before returning a string like "[([]) could pass if you don't implement this.
 ensure that the string only contains (){}[]
-*/ 
+*/
