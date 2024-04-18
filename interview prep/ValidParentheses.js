@@ -80,15 +80,6 @@ if (store.length > 0) {
 
 console.log(validParentheses);
 
-let t = 1;
-while (t < 3);
-{
-  let taco = 2;
-  console.log(taco.toString());
-  taco++;
-  t++;
-}
-
 /* the ideal data structure for this is a stack. an array in javascript as the push pop functions that we need for this project.
 somethings to consider: 
 make sure that both the stack and string are empty before returning a string like "[([]) could pass if you don't implement this.
