@@ -141,7 +141,17 @@ total += first
 return total;
 }
 
-/* somthing to consider
+/* somethings to consider
 make sure all the values in the roman numerals string are uppercase
 to ensure proper stranslation in both cases the hash map to read them.
-Make sure to use the correct data structure*/
+Make sure to use the correct data structure
+check for to many repeats IIII
+check for invalid sentences
+check for invalid orders VX
+
+
+
+
+
+*/
+
